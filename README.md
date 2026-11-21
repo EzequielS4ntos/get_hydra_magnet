@@ -9,4 +9,4 @@ Built to simplify sharing torrent magnet links indexed through Hydra Launcher wi
 ## Platform & Requirements
 
 * **Operating System:** Linux only (relies on native system commands).
-* **System Dependency:** `wl-copy` must be installed in your environment.
+* **System Dependency:** `wl-copy` Linux package must be installed in your environment.
