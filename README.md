@@ -1,2 +1,12 @@
 # get_hydra_magnet
-Código feito em python para pegar os links magneticos de torrents baixados pelo hydra launcer
+
+A Python utility for extracting torrent magnet links indexed by Hydra Launcher.
+
+## Overview
+
+Built to simplify sharing torrent magnet links indexed through Hydra Launcher without manual digging.
+
+## Platform & Requirements
+
+* **Operating System:** Linux only (relies on native system commands).
+* **System Dependency:** `wl-copy` must be installed in your environment.
