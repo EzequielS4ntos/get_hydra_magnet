@@ -9,17 +9,15 @@ with open('logs.txt', 'r') as file:
 
 links = []
 
-search = input('Search term (type just one like "spider" ou "redemption"): ').lower()
-
 for line in content:
-    if 'magnet:' in line:
+    if 'uri' in line:
         target_line = line.replace('\n', '')
-        if search in target_line.lower():
-            if target_line[0] == '{' and target_line[-1] == '}':
-                try:
-                    links.append(json.loads(target_line))
-                except:
-                    pass
+        if target_line[0] == '{' and target_line[-1] == '}':
+            try:
+                raw_jason = json.loads(target_line)
+                links.append(raw_jason)
+            except:
+                pass
 
 check = set()
 unique = [
@@ -31,11 +29,12 @@ find_downloads = []
 indice = 1
 print('\nFound downloads:')
 for i in unique:
-    print(f'{indice} - {i['folderName']}')
+    title:str = i['folderName']
+    print(f'{indice} - {title}')
 
     find_downloads.append({
         'indice': indice,
-        'name': i['folderName'],
+        'name': title,
         'link': i['uri']
     })
 
