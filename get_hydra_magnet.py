@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 import json
 import subprocess
 
@@ -14,8 +16,9 @@ for line in content:
         target_line = line.replace('\n', '')
         if target_line[0] == '{' and target_line[-1] == '}':
             try:
-                raw_jason = json.loads(target_line)
-                links.append(raw_jason)
+                raw_json = json.loads(target_line)
+                if raw_json['folderName'] != None:
+                    links.append(raw_json)
             except:
                 pass
 
